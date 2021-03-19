@@ -1,0 +1,408 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package practica2;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.*;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+
+public class Practica2 {
+    
+    
+    public static String correoComputadora;
+    public static String nombreComputadora;
+    public static String visibleComputadora;
+    
+    public static String correoTablet;
+    public static String nombreTablet;
+    public static String visibleTablet;
+    
+    public static String correoSmartwatch;
+    public static String nombreSmartwatch;
+    public static String visibleSmartwatch;
+    
+    public static String correoSmartphone;
+    public static String nombreSmartphone;
+    public static String numeroSmartphone;
+    public static String visibleSmartphone;
+   
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) throws IOException {
+        // TODO code application logic here
+        FileWriter ficheroComputadora = new FileWriter ("C:/Users/Pablo/Desktop/ficheroComputadora.txt");
+        FileWriter ficheroTablet = new FileWriter ("C:/Users/Pablo/Desktop/ficheroTablet.txt");
+        FileWriter ficheroSmartwatch = new FileWriter ("C:/Users/Pablo/Desktop/ficheroSmartwatch.txt");
+        FileWriter ficheroSmartphone= new FileWriter ("C:/Users/Pablo/Desktop/ficheroSmartphone.txt");
+        
+        //String[] computadora = new String[correoComputadora];
+        ArrayList<String> computadora = new ArrayList<String>();
+        ArrayList<String> tablet = new ArrayList<String>();
+        ArrayList<String> smartwatch = new ArrayList<String>();
+        ArrayList<String> smartphone = new ArrayList<String>();
+        
+        Scanner crear = new Scanner(System.in);
+        int opcion;
+
+do{
+        System.out.println("-------------------------- Ecosistema de Dispotivos --------------------------");
+        System.out.println("1. Crear dispositivo");
+        System.out.println("2. Administrar dispositivo");
+        System.out.println("3. Acciones con dispositivos");
+        System.out.println("4. Acciones externas de dispositivos");
+        System.out.println("5. Cargas masivas");
+        System.out.println("6. Logs");
+        System.out.println("7. Salir");
+        System.out.println("");
+        System.out.println("Seleccione tipo de dispositivo a crear:");
+        System.out.println("------------------------------------------------------------------------------");
+        
+        opcion = crear.nextInt();
+        
+    switch(opcion){
+        case 1:
+            Scanner creacion = new Scanner(System.in);
+            int opcionCreacion = 0 ;
+        
+            System.out.println("----------------------------- Crear Dispositivo -----------------------------");
+            System.out.println("1. Computadora portátil");
+            System.out.println("2. Tablet");
+            System.out.println("3. SmartWatch");
+            System.out.println("4. Smartphone");
+            System.out.println("5. Auriculares inalámbricos");
+            System.out.println("");
+            System.out.println("Seleccione tipo de dispositivo a crear:");
+            System.out.println("------------------------------------------------------------------------------");
+        
+            opcionCreacion = creacion.nextInt();
+            
+            switch(opcionCreacion){
+                case 1:
+                 
+                Scanner creacionComputadora = new Scanner(System.in);
+                            
+                System.out.println("------------------ Creación de nueva Computadora portatil ---------------------");
+                System.out.println("Correo electrónico:");
+                correoComputadora = creacionComputadora.next();
+                System.out.println("Nombre del dispositivo:");
+                nombreComputadora = creacionComputadora.next();
+                System.out.println("Visible para conexión:");
+                System.out.println("SI        NO");
+                visibleComputadora = creacionComputadora.next();
+                System.out.println("");
+                System.out.println("Presione enter para confirmar los datos...");
+                System.out.println("------------------------------------------------------------------------------");
+                
+                
+                //System.out.println(correoComputadora);
+                computadora.add(nombreComputadora);
+                
+                System.out.println("----------------------- Nueva Computadora portatil --------------------------");
+                System.out.println("");
+
+                  System.out.println("Correo electrónico: " + correoComputadora);
+                  System.out.println("Nombre del dispositivo: " + nombreComputadora);
+                  System.out.println("Visible para conexion: " + visibleComputadora);
+                System.out.println("");
+                System.out.println("Nota: El dispositivo será encendido por defecto.");
+                   
+
+                break;
+                
+                
+                
+                case 2:
+                    
+                Scanner creacionTablet = new Scanner(System.in);
+                
+                System.out.println("------------------------ Creación de nueva Tablet -------------------------");
+                System.out.println("Correo electrónico:");
+                correoTablet = creacionTablet.next();
+                System.out.println("Nombre del dispositivo:");
+                nombreTablet = creacionTablet.next();
+                System.out.println("Visible para conexión:");
+                System.out.println("SI        NO");
+                visibleTablet = creacionTablet.next();
+                System.out.println("");
+                System.out.println("Presione enter para confirmar los datos...");
+                System.out.println("--------------------------------------------------------------------------");
+                
+                tablet.add(nombreTablet);
+
+                
+                System.out.println("------------------------------ Nueva Tablet ------------------------------");
+                System.out.println("");
+
+                  System.out.println("Correo electrónico: " + correoTablet);
+                  System.out.println("Nombre del dispositivo: " + nombreTablet);
+                  System.out.println("Visible para conexion: " + visibleTablet);
+                 
+                System.out.println("");
+                System.out.println("Nota: El dispositivo será encendido por defecto.");
+                
+                break;
+                
+                case 3:
+                    
+                Scanner creacionSmartwatch = new Scanner(System.in);
+                    
+                System.out.println("------------------ Creación de nuevo SmartWatch ---------------------");
+                System.out.println("Correo electrónico:");
+                correoSmartwatch = creacionSmartwatch.next();
+                System.out.println("Nombre del dispositivo:");
+                nombreSmartwatch = creacionSmartwatch.next();
+                System.out.println("Visible para conexión:");
+                System.out.println("SI        NO");
+                visibleSmartwatch = creacionSmartwatch.next();
+                System.out.println("");
+                System.out.println("Presione enter para confirmar los datos...");
+                System.out.println("-----------------------------------------------------------------");
+                
+
+                smartwatch.add(nombreSmartwatch);
+                
+                System.out.println("------------------------------ Nuevo Smartwatch ------------------------------");
+                System.out.println("");
+                
+                  System.out.println("Correo electrónico: " + correoSmartwatch);
+                  System.out.println("Nombre del dispositivo: " + nombreSmartwatch);
+                  System.out.println("Visible para conexion: " + visibleSmartwatch);
+
+              
+                System.out.println("");
+                System.out.println("Nota: El dispositivo será encendido por defecto.");
+                
+                break;
+                    
+                case 4:
+                    
+                Scanner creacionSmartphone = new Scanner(System.in);
+                    
+                System.out.println("------------------ Creación de nuevo Smartphone ---------------------");
+                System.out.println("Correo electrónico:");
+                correoSmartphone = creacionSmartphone.next();
+                System.out.println("Nombre del dispositivo:");
+                nombreSmartphone = creacionSmartphone.next();
+                System.out.println("Numero Telefonico:");
+                numeroSmartphone = creacionSmartphone.next();
+                System.out.println("Visible para conexión:");
+                System.out.println("SI        NO");
+                visibleSmartphone = creacionSmartphone.next();
+                System.out.println("");
+                System.out.println("Presione enter para confirmar los datos...");
+                System.out.println("-----------------------------------------------------------------");
+                
+
+                smartphone.add(nombreSmartphone);
+                
+                System.out.println("------------------------- Nuevo Smartphone ----------------------------");
+                System.out.println("");
+
+                  System.out.println("Correo electrónico: " + correoSmartphone);
+                  System.out.println("Nombre del dispositivo: " + nombreSmartphone);
+                  System.out.println("Numero Telefonico: " + numeroSmartphone);
+                  System.out.println("Visible para conexion: " + visibleSmartphone);
+
+                
+
+                System.out.println("");
+                System.out.println("Nota: El dispositivo será encendido por defecto.");
+                break;
+                
+                case 5:
+                    
+                System.out.println("------------------ Creación de nuevo Auriculares ---------------------");
+                System.out.println("Listado de dispositivos:");
+                //for (Computadora model : listaComputadora) {
+                  //System.out.println(model.getNombreDispositivo());
+                //}
+                
+                /*archivos a = new archivos();
+                System.out.println(a.leerTxt("C:/Users/Pablo/Desktop/ficheroComputadora.txt"));
+                System.out.println(a.leerTxt("C:/Users/Pablo/Desktop/ficheroTablet.txt"));
+                System.out.println(a.leerTxt("C:/Users/Pablo/Desktop/ficheroSmartwatch.txt"));
+                System.out.println(a.leerTxt("C:/Users/Pablo/Desktop/ficheroSmartphone.txt"));
+                */
+                System.out.println(computadora);
+                System.out.println(tablet);
+                System.out.println(smartwatch);
+                System.out.println(smartphone);
+                System.out.println("Seleccione un dispositivo para enlazar los auriculares:");
+                System.out.println("");
+                System.out.println("-----------------------------------------------------------------");
+                
+            }break;
+            
+        case 2:
+            
+            Scanner administrar = new Scanner(System.in);
+            int opcionAdministrar = 0 ;
+            
+        
+            System.out.println("------------------ Administrar Dispositivos ---------------------");
+            System.out.println("1. Computadora portátil");
+            System.out.println("2. Tablet");
+            System.out.println("3. SmartWatch");
+            System.out.println("4. Smartphone");
+            System.out.println("5. Auriculares inalámbricos");
+            System.out.println("");
+            System.out.println("Seleccione tipo de dispositivo a administrar:");
+            System.out.println("-----------------------------------------------------------------");
+        
+            opcionAdministrar = administrar.nextInt();
+            
+            switch(opcionAdministrar){
+                case 1: 
+                System.out.println("------------------ Computadoras creadas ---------------------");
+                System.out.println("Listado de dispositivos:");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("Seleccione un dispositivo para administrar:");
+                System.out.println("-----------------------------------------------------------------");
+                break;
+                
+                case 2: 
+                System.out.println("------------------ Tablets creadas ---------------------");
+                System.out.println("Listado de dispositivos:");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("Seleccione un dispositivo para administrar:");
+                System.out.println("-----------------------------------------------------------------");
+                break;
+                
+                case 3: 
+                System.out.println("------------------ Smartwatch creados ---------------------");
+                System.out.println("Listado de dispositivos:");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("Seleccione un dispositivo para administrar:");
+                System.out.println("-----------------------------------------------------------------");
+                break;
+                
+                case 4: 
+                System.out.println("------------------ Smartphones creados ---------------------");
+                System.out.println("Listado de dispositivos:");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("Seleccione un dispositivo para administrar:");
+                System.out.println("-----------------------------------------------------------------");
+                break;
+                
+                case 5: 
+                System.out.println("------------------ Auriculares creados ---------------------");
+                System.out.println("Listado de dispositivos:");
+                System.out.println("");
+                System.out.println("");
+                System.out.println("Seleccione un dispositivo para administrar:");
+                System.out.println("-----------------------------------------------------------------");
+            }break;
+            
+        case 3:
+            Scanner acciones = new Scanner(System.in);
+            int opcionAcciones = 0 ;
+            
+        
+            System.out.println("------------------ Acciones con Dispositivos ---------------------");
+            System.out.println("Selecciones el tipo de dispositivo:");
+            System.out.println("");  
+            System.out.println("1. Computadora portátil");
+            System.out.println("2. Tablet");
+            System.out.println("3. SmartWatch");
+            System.out.println("4. Smartphone");
+            System.out.println("5. Auriculares inalámbricos");
+            System.out.println("");
+            System.out.println("Seleccione un tipo de dispositivo:");
+            System.out.println("");
+            System.out.println("-----------------------------------------------------------------");
+        
+            opcionAcciones = acciones.nextInt();
+            
+            switch(opcionAcciones){
+                case 1:
+                System.out.println("------------------ Acciones con Dispositivos ---------------------");
+                System.out.println("");  
+                System.out.println("Tipo de dispositivo: Computadora portátil");
+                System.out.println("Nombre del Dispositivo:");
+                System.out.println(""); 
+                System.out.println("Seleccione el tipo de acción a realizar:");
+                System.out.println(""); 
+                System.out.println("1. Tomar fotografía");
+                System.out.println("2. Copiar texto");
+                System.out.println("3. Pegar texto");
+                System.out.println("4. Compartir documentos");
+                System.out.println("5. Reproducir música");
+                System.out.println("");
+                System.out.println("Seleccione acción a realizar:");
+                System.out.println("");
+                System.out.println("-----------------------------------------------------------------");
+                break;
+                
+                case 2:
+                System.out.println("------------------ Acciones con Dispositivos ---------------------");
+                System.out.println("");  
+                System.out.println("Tipo de dispositivo: Tablet");
+                System.out.println("Nombre del Dispositivo:");
+                System.out.println(""); 
+                System.out.println("Seleccione el tipo de acción a realizar:");
+                System.out.println(""); 
+                System.out.println("1. Tomar fotografía");
+                System.out.println("2. Copiar texto");
+                System.out.println("3. Pegar texto");
+                System.out.println("4. Compartir documentos");
+                System.out.println("5. Reproducir música");
+                System.out.println("");
+                System.out.println("Seleccione acción a realizar:");
+                System.out.println("");
+                System.out.println("-----------------------------------------------------------------");
+                break;
+                
+                case 3:
+                System.out.println("------------------ Acciones con Dispositivos ---------------------");
+                System.out.println("");  
+                System.out.println("Tipo de dispositivo: Smartwatch");
+                System.out.println("Nombre del Dispositivo:");
+                System.out.println(""); 
+                System.out.println("Seleccione el tipo de acción a realizar:");
+                System.out.println(""); 
+                System.out.println("1. Tomar fotografía");
+                System.out.println("2. Copiar texto");
+                System.out.println("3. Reproducir música");
+                System.out.println("");
+                System.out.println("Seleccione acción a realizar:");
+                System.out.println("");
+                System.out.println("-----------------------------------------------------------------");
+                break;
+                
+                case 4:
+                System.out.println("------------------ Acciones con Dispositivos ---------------------");
+                System.out.println("");  
+                System.out.println("Tipo de dispositivo: Smartphone");
+                System.out.println("Nombre del Dispositivo:");
+                System.out.println(""); 
+                System.out.println("Seleccione el tipo de acción a realizar:");
+                System.out.println(""); 
+                System.out.println("1. Tomar fotografía");
+                System.out.println("2. Copiar texto");
+                System.out.println("3. Pegar texto");
+                System.out.println("4. Compartir documentos");
+                System.out.println("5. Reproducir música");
+                System.out.println("");
+                System.out.println("Seleccione acción a realizar:");
+                System.out.println("");
+                System.out.println("-----------------------------------------------------------------");
+                break;
+            }
+        }
+    }while(opcion < 7);}
+}
+
